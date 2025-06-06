@@ -150,9 +150,18 @@
             <div class="{% if show_product_quantity %}col-8 {% if not home_main_product %}col-md-9{% endif %}{% else %}col-12{% endif %}">
 
                 {# Add to cart CTA #}
-
-                <input type="submit" class="js-addtocart js-prod-submit-form btn-add-to-cart btn btn-primary btn-big btn-block {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
-
+                {% set has_size_variations = false %}
+                {% for variation in product.variations %}
+		            {% if variation.name in ['Talle', 'Talla', 'Tamanho', 'Size'] %}
+			        {% set has_size_variations = true %}
+		            {% endif %}
+                {% endfor %}
+                {# Add to cart CTA #}
+                <input id="go-to-checkout" class="js-buybutton js-addtocart2 btn btn-primary btn-big btn-block mb-2" type="submit" name="go_to_checkout" value="Compre Agora" {% if has_size_variations == true %}disabled{% endif %}/>
+                <input id="buy-now" data-toggle="#modal-cart" type="submit" class="js-modal-open js-addtocart js-prod-submit-form btn-add-to-cart btn btn-primary btn-big btn-block {{ state }}" value="{% if state == 'cart' %}Adicionar ao carrinho{% else %}{{ texts[state] | translate }}{% endif %}" " {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart" {% if botao_compra == botao_compra_desativado and has_size_variations == true %}disabled{% endif %}/>
+                {% if has_size_variations == true %}
+                    <div id="captura-clique" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;z-index: 10; cursor: pointer;"></div>
+                {% endif %}
                 {# Fake add to cart CTA visible during add to cart event #}
 
                 {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: "btn-big"} %}

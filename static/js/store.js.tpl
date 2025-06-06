@@ -2561,8 +2561,7 @@ DOMContentLoaded.addEventOrExecute(() => {
         }
 
     {% endif %}
-
-	{# /* // Change variant */ #}
+{# /* // Change variant */ #}
 
 	{# Updates price, installments, labels and CTA on variant change #}
 
@@ -2697,10 +2696,12 @@ DOMContentLoaded.addEventOrExecute(() => {
 	    }
 
         var button = parent.find('.js-addtocart');
+        var buttonbuy = document.getElementById("go-to-checkout");  
         const quickshopButtonWording = parent.find('.js-open-quickshop-wording');
         const quickshopButtonIcon = parent.find('.js-open-quickshop-icon');
         button.removeClass('cart').removeClass('contact').removeClass('nostock');
         var $product_shipping_calculator = parent.find("#product-shipping-container");
+        {% set state = store.is_catalog ? 'catalog' : (product.available ? product.display_price ? 'cart' : 'contact' : 'nostock') %}
 
         {# Update CTA wording and status #}
 
@@ -2708,19 +2709,23 @@ DOMContentLoaded.addEventOrExecute(() => {
             if (!variant.available){
                 button.val('{{ "Sin stock" | translate }}');
                 button.addClass('nostock');
+                buttonbuy.classList.add('button-display-none');
                 button.attr('disabled', 'disabled');
                 quickshopButtonWording.text('{{ "Sin stock" | translate }}');
                 quickshopButtonIcon.addClass("d-none").removeClass("d-md-inline");
                 $product_shipping_calculator.hide();
             } else if (variant.contact) {
                 button.val('{{ "Consultar precio" | translate }}');
+                buttonbuy.classList.add('button-display-none');
                 button.addClass('contact');
                 button.removeAttr('disabled');
                 quickshopButtonWording.text('{{ "Consultar precio" | translate }}');
                 quickshopButtonIcon.addClass("d-none").removeClass("d-md-inline");
                 $product_shipping_calculator.hide();
             } else {
-                button.val('{{ "Agregar al carrito" | translate }}');
+                button.val('{% if state == "cart" %}Adicionar ao carrinho{% else %}{{ texts[state] | translate }}{% endif %}');
+                buttonbuy.classList.remove('button-display-none');
+                buttonbuy.removeAttr('disabled');
                 button.addClass('cart');
                 button.removeAttr('disabled');
                 quickshopButtonWording.text('{{ "Comprar" | translate }}');
