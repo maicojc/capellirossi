@@ -192,11 +192,6 @@
         </div>
     {% endif %}
 
-    {# Adversiting bar #}
-    
-    {% if settings.ad_bar and head_transparent %}
-        {% snipplet "header/header-advertising.tpl" %}
-    {% endif %}
  
 </header>
 
@@ -204,11 +199,6 @@
 
 {% include "snipplets/notification.tpl" with {order_notification: true} %}
 
-{# Adversiting bar #}
-    
-{% if settings.ad_bar and not head_transparent %}
-    {% snipplet "header/header-advertising.tpl" %}
-{% endif %}
 
 {# Show cookie validation message #}
 

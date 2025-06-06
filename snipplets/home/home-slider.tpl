@@ -8,6 +8,9 @@
 {% endif %}
 	<div class="{% if mobile %}js-home-mobile-slider{% else %}js-home-main-slider{% endif %}-visibility {% if has_main_slider and has_mobile_slider %}{% if mobile %}d-md-none{% else %}d-none d-md-block{% endif %}{% elseif not settings.toggle_slider_mobile and mobile %}hidden{% endif %}">
 		<div class="js-home-slider-section section-slider position-relative">
+			{% if settings.ad_bar %}
+    			{% snipplet "header/header-advertising.tpl" %}
+			{% endif %}
 			{% if not settings.slider_full %}
 				<div class="js-home-slider-container container">
 			{% endif %}
