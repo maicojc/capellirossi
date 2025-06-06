@@ -80,7 +80,7 @@
         {{ component('structured-data') }}
 
     </head>
-    <body class="js-head-offset head-offset">
+    <body class="js-head-offset head-offset {% if template == 'home' %} padding_0 {% endif %}">
 
         {# Theme icons #}
 
