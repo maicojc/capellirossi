@@ -38,22 +38,44 @@
                         {% set repeat_number = 1 %}
                     {% endif %}
                     {% for i in 1..repeat_number %}
-                        {% for adbar in ['ad_bar_01', 'ad_bar_02', 'ad_bar_03'] %}
-                            {% set advertising_text = attribute(settings,"#{adbar}_text") %}
-                            {% set advertising_url = attribute(settings,"#{adbar}_url") %}
-                            {% if advertising_text %}
-                                <span class="adbar-message {{ adbar_animated_text_classes }} {% if num_messages > 1 and not adbar_animated %}px-4{% endif %}">
-                                    {% if advertising_url %}
-                                        <a href="{{ advertising_url }}" {% if not adbar_animated %}class="d-block w-100"{% endif %}>
-                                    {% endif %}
-                                            {{ advertising_text }}
-                                    {% if advertising_url %}
-                                        </a>
-                                    {% endif %}
-                                </span>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
+  {% for adbar in ['ad_bar_01', 'ad_bar_02', 'ad_bar_03'] %}
+    {% set advertising_text = attribute(settings, adbar ~ "_text") %}
+    {% set advertising_url = attribute(settings, adbar ~ "_url") %}
+    {% if advertising_text %}
+      <span class="adbar-message {{ adbar_animated_text_classes }} {% if num_messages > 1 and not adbar_animated %}px-4{% endif %}">
+        {% if adbar == 'ad_bar_01' %}
+          <div class="d-flex align-items-center justify-content-between w-100 gap-2">
+            {% if advertising_url %}
+              <a href="{{ advertising_url }}" class="flex-grow-1 text-truncate me-2 {% if not adbar_animated %}d-block{% endif %}">
+                {{ advertising_text }}
+              </a>
+            {% else %}
+              <span class="flex-grow-1 text-truncate me-2">{{ advertising_text }}</span>
+            {% endif %}
+
+            <button id="copy-button-ad_bar_01" class="btn btn-sm btn-outline-secondary" type="button">
+                <div>
+                    <span class="copy-label"> COPIAR</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="14px" fill="#000000">
+                        <path d="M735.38-240H344.62q-27.62 0-46.12-18.5Q280-277 280-304.62v-510.76q0-27.62 18.5-46.12Q317-880 344.62-880H620l180 180v395.38q0 27.62-18.5 46.12Q763-240 735.38-240ZM600-680v-160H344.62q-9.24 0-16.93 7.69-7.69 7.69-7.69 16.93v510.76q0 9.24 7.69 16.93 7.69 7.69 16.93 7.69h390.76q9.24 0 16.93-7.69 7.69-7.69 7.69-16.93V-680H600ZM184.62-80Q157-80 138.5-98.5 120-117 120-144.62V-640h40v495.38q0 9.24 7.69 16.93 7.69 7.69 16.93 7.69H560v40H184.62ZM320-840v160-160 560-560Z"></path>
+                    </svg>
+                </div>
+            </button>
+          </div>
+        {% else %}
+          {% if advertising_url %}
+            <a href="{{ advertising_url }}" {% if not adbar_animated %}class="d-block w-100"{% endif %}>
+              {{ advertising_text }}
+            </a>
+          {% else %}
+            {{ advertising_text }}
+          {% endif %}
+        {% endif %}
+      </span>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
                 </div>
                 {% if num_messages > 1 and not adbar_animated %}
                     <div class="js-swiper-adbar-prev swiper-button-absolute swiper-button-prev svg-icon-text">
