@@ -497,9 +497,6 @@ Encabezado
 		description = Color de texto
 	title
 		title = Mensajes
-	checkbox
-		name = ad_bar_animate
-		description = Animar texto de derecha a izquierda
 	subtitle
 		subtitle = Mensaje 1
 	i18n_input

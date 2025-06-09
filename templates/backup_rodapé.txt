@@ -1,0 +1,105 @@
+<div style="display:flex; flex-direction:row; justify-content:center; align-items:center;">
+<label>Feito com 🖤 pela </label>
+<a target="blank" href="https://www.mozve.com.br/?utm_source=Site&utm_medium=LogoMozveRodape&utm_campaign=CapelliRossi" style="margin-top:3px;"><img src="https://www.mozve.com.br/wp-content/uploads/2025/05/8ce42579-93f2-4a90-b4d5-9b67b357ab3a.png" class="rodape-mozve">
+</a></div>
+
+<script>
+  document.querySelectorAll('.ativar-botao-compra').forEach(function (botao) {
+    botao.addEventListener('click', function () {
+      const alvos = ['#go-to-checkout', '#buy-now'];
+
+      alvos.forEach(function (seletor) {
+        const elemento = document.querySelector(seletor);
+        if (elemento) {
+          elemento.removeAttribute('disabled');
+        }
+      });
+    });
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const alvo = document.querySelector('#Tamanho.js-insta-variation-label');
+    const captura = document.querySelector('#captura-clique');
+    const variacoes = document.querySelectorAll('.js-insta-variant');
+
+    if (captura && alvo && variacoes.length > 0) {
+      // Quando clicar em "comprar" sem selecionar variação
+      captura.addEventListener('click', function () {
+        const algumaSelecionada = Array.from(variacoes).some(btn => btn.classList.contains('active'));
+
+        if (!algumaSelecionada && !alvo.querySelector('.aviso-selecao')) {
+          alvo.insertAdjacentHTML('beforeend', '<span class="aviso-selecao" style="color:#ff4c4c; margin-left: 8px;">Selecione uma opção</span>');
+        }
+      });
+
+      // Quando clicar em qualquer variação
+      variacoes.forEach(btn => {
+        btn.addEventListener('click', function () {
+          // Remove aviso (se houver)
+          const aviso = alvo.querySelector('.aviso-selecao');
+          if (aviso) aviso.remove();
+
+          // Oculta camada de bloqueio
+          captura.style.display = 'none';
+        });
+      });
+    }
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('.js-head-main');
+  const banner = document.querySelector('.js-main-slider-section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        header.classList.add('transparent');
+      } else {
+        header.classList.remove('transparent');
+      }
+    });
+  }, { threshold: 0.65 });
+
+  observer.observe(banner);
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const logoOriginal = document.querySelector('.logo-img'); // .logo-img deve ser a <img>
+
+    if (logoOriginal) {
+      // Clona a imagem
+      const clone = logoOriginal.cloneNode(true);
+
+      // Altera o src diretamente, pois logoOriginal é a <img>
+      clone.src = 'https://d1a9qnv764bsoo.cloudfront.net/stores/006/038/253/rte/0c5f179e-80be-4e03-a134-eebb68e7bf57.png';
+
+      // Adiciona o ID
+      clone.id = 'Logotransparente';
+
+      // Insere o clone como irmão após o original
+      logoOriginal.parentNode.insertBefore(clone, logoOriginal.nextSibling);
+    }
+  });
+</script>
+<script>
+  document.getElementById('copy-button-ad_bar_01').addEventListener('click', function () {
+    const codigo = 'PRIMEIRACOMPRA';
+    const textoInterno = this.querySelector('div'); // Seleciona o <div> dentro do botão
+
+    navigator.clipboard.writeText(codigo).then(function () {
+      textoInterno.innerHTML = '<span>COPIADO!</span>';
+
+      setTimeout(() => {
+        textoInterno.innerHTML = '<span>COPIAR</span> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="14px" fill="#000000"> <path d="M735.38-240H344.62q-27.62 0-46.12-18.5Q280-277 280-304.62v-510.76q0-27.62 18.5-46.12Q317-880 344.62-880H620l180 180v395.38q0 27.62-18.5 46.12Q763-240 735.38-240ZM600-680v-160H344.62q-9.24 0-16.93 7.69-7.69 7.69-7.69 16.93v510.76q0 9.24 7.69 16.93 7.69 7.69 16.93 7.69h390.76q9.24 0 16.93-7.69 7.69-7.69 7.69-16.93V-680H600ZM184.62-80Q157-80 138.5-98.5 120-117 120-144.62V-640h40v495.38q0 9.24 7.69 16.93 7.69 7.69 16.93 7.69H560v40H184.62ZM320-840v160-160 560-560Z"></path></svg>';
+      }, 2000);
+    });
+  });
+</script>
+
+
+
