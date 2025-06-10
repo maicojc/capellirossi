@@ -818,9 +818,10 @@ DOMContentLoaded.addEventOrExecute(() => {
                     jQueryNuvem(selector).css("paddingTop", head_height.toString() - 1 + 'px');
                 },210);
             }else{
-
-                {# On mobile there is no top padding due to position sticky CSS #}
-                var head_height = 0;
+                setTimeout(function(){
+                    var head_height = jQueryNuvem("{% if template == 'home' %}.js-topbar{% else %}.js-head-main{% endif %}").outerHeight();
+                    jQueryNuvem(selector).css("paddingTop", head_height.toString() - 1 + 'px');
+                },210);
             }
 
             // Apply offset nav height on load
@@ -834,9 +835,7 @@ DOMContentLoaded.addEventOrExecute(() => {
                 if (window.innerWidth > 768) {
                     jQueryNuvem(selector).css("paddingTop", head_height.toString() + 'px');
                 }else{
-
-                    {# On mobile there is no top padding due to position sticky CSS #}
-                    jQueryNuvem(selector).css("paddingTop", "0px");
+                    jQueryNuvem(selector).css("paddingTop", head_height.toString() + 'px');
                 }
             });
         }
