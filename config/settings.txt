@@ -815,6 +815,12 @@ Página de inicio
 	i18n_input
 		name = featured_products_title
 		description = Título
+	i18n_input
+		name = featured_products_button
+		description = Texto do Botão, deixe vazio caso não queira um botão.
+	i18n_input
+		name = featured_products_button_link
+		description = link do botão, obrigatorio para o botão aparecer
 	checkbox
 		name = featured_product_colors
 		description = Usar estos colores para la sección
@@ -863,6 +869,12 @@ Página de inicio
 	i18n_input
 		name = new_products_title
 		description = Título
+	i18n_input
+		name = new_products_button
+		description = Texto do Botão, deixe vazio caso não queira um botão.
+	i18n_input
+		name = new_products_button_link
+		description = link do botão, obrigatorio para o botão aparecer
 	checkbox
 		name = new_product_colors
 		description = Usar estos colores para la sección
@@ -911,6 +923,12 @@ Página de inicio
 	i18n_input
 		name = sale_products_title
 		description = Título
+	i18n_input
+		name = sale_products_button
+		description = Texto do Botão, deixe vazio caso não queira um botão.
+	i18n_input
+		name = sale_products_button_link
+		description = link do botão, obrigatorio para o botão aparecer
 	checkbox
 		name = sale_product_colors
 		description = Usar estos colores para la sección

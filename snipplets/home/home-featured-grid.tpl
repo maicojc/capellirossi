@@ -37,6 +37,8 @@
     {% set section_format_mobile = settings.featured_products_format_mobile %}
     {% set section_id = 'featured' %}
     {% set section_title = settings.featured_products_title %}
+    {% set button_text = settings.featured_products_button %}
+    {% set button_link = settings.featured_products_button_link %}
 {% endif %}
 {% if new_products %}
     {% set sections_products = sections.new.products %}
@@ -52,6 +54,8 @@
     {% set section_format_mobile = settings.new_products_format_mobile %}
     {% set section_id = 'new' %}
     {% set section_title = settings.new_products_title %}
+    {% set button_text = settings.new_products_button %}
+    {% set button_link = settings.new_products_button_link %}
 {% endif %}
 {% if sale_products %}
     {% set sections_products = sections.sale.products %}
@@ -67,6 +71,8 @@
     {% set section_format_mobile = settings.sale_products_format_mobile %}
     {% set section_id = 'sale' %}
     {% set section_title = settings.sale_products_title %}
+    {% set button_text = settings.sale_products_button %}
+    {% set button_link = settings.sale_products_button_link %}
 {% endif %}
 {% if promotion_products %}
     {% set sections_products = sections.promotion.products %}
@@ -128,6 +134,11 @@
                         <svg class="icon-inline icon-lg"><use xlink:href="#chevron"/></svg>
                     </div>
                 {% endif %}
+            {% endif %}
+            {% if button_text and button_link %}
+                <div class="containerbotoesvitrine">
+                    <a class="botoes-vitrine" href="{{button_link}}">{{button_text}}</a>    
+                </div>
             {% endif %}
         </div>
     </div>
