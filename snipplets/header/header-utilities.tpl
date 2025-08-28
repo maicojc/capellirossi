@@ -15,7 +15,7 @@
 				<div class="col-auto pr-0">
 					<svg class="icon-inline font-big"><use xlink:href="#user"/></svg>
 				</div>
-				<div class="col pl-2 text-left font-small">
+				<div class="col pl-2 text-left font-small d-flex align-items-center">
 					{% if not customer %}
 						{{ "Iniciar sesión" | translate | a_tag(store.customer_login_url, '', 'mr-1 text-underline') }} 
 						{% if 'mandatory' not in store.customer_accounts %}
@@ -27,10 +27,36 @@
 						{% if not header_desktop %}.{% endif %}
 						{{ "Cerrar sesión" | translate | a_tag(store.customer_logout_url, '', 'ml-1 text-underline') }}
 					{% endif %}
+					<div class="lang-selector inmenu" id="langSelectormenu">
+						<div class="lang-trigger">
+							<img src="https://www.flagcdn.com/32x24/br.png" width="32" height="24" alt="Brazil">
+							<span class="arrow">▼</span>
+						</div>
+						<div class="lang-options">
+							<a href="https://institucional.capellirossi.com.br/spanish" target="_blank" rel="noopener">
+							<img src="https://www.flagcdn.com/32x24/es.png" width="32" height="24" alt="Spain"> Espanhol
+							</a>
+							<a href="https://institucional.capellirossi.com.br/" target="_blank" rel="noopener">
+							<img src="https://www.flagcdn.com/32x24/gb.png" width="32" height="24" alt="United Kingdom"> Inglês
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		{% endif %}
 	</span>
+	
+	<script>
+	document.getElementById("langSelectormenu").addEventListener("click", function(e) {
+	this.classList.toggle("open");
+	e.stopPropagation();
+	});
+
+	document.addEventListener("click", function() {
+	document.getElementById("langSelectormenu").classList.remove("open");
+	});
+	</script>
+
 {% elseif use_languages %}
 	<span class="utilities-container nav-dropdown d-inline-block position-relative">
 		<span class="utilities-text align-items-center btn-utility">

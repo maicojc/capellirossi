@@ -140,11 +140,30 @@
 
                 {# Languages #}
 
-                {% if has_languages %}
-                    <div class="js-utility-col col-utility desktop-utility-col order-md-2">
-                        {% include "snipplets/header/header-utilities.tpl" with {use_languages: true} %}
+                <div class="lang-selector" id="langSelector">
+                    <div class="lang-trigger">
+                        <img src="https://www.flagcdn.com/32x24/br.png" width="32" height="24" alt="Brazil">
+                        <span class="arrow">▼</span>
                     </div>
-                {% endif %}
+                    <div class="lang-options">
+                        <a href="https://institucional.capellirossi.com.br/spanish" target="_blank" rel="noopener">
+                        <img src="https://www.flagcdn.com/32x24/es.png" width="32" height="24" alt="Spain"> Espanhol
+                        </a>
+                        <a href="https://institucional.capellirossi.com.br/" target="_blank" rel="noopener">
+                        <img src="https://www.flagcdn.com/32x24/gb.png" width="32" height="24" alt="United Kingdom"> Inglês
+                        </a>
+                    </div>
+                </div>
+                <script>
+                document.getElementById("langSelector").addEventListener("click", function(e) {
+                this.classList.toggle("open");
+                e.stopPropagation();
+                });
+
+                document.addEventListener("click", function() {
+                document.getElementById("langSelector").classList.remove("open");
+                });
+                </script>
 
                 {# Account icon #}
                 
