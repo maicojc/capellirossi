@@ -101,6 +101,7 @@
 							{% if settings.footer_menus_toggle %}
 								</div>
 							{% endif %}
+							<a href="https://www.capellirossi.com.br/relatorio-de-igualdade-salarial">Relatório de Igualdade Salarial</a>
 						</div>
 					{% endif %}
 				{% endif %}
