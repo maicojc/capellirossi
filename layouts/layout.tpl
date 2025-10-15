@@ -120,6 +120,12 @@
 
         {% snipplet "whatsapp-chat.tpl" %}
 
+        {# Popup with timer #}
+
+        {% if settings.popup_temp and template != 'product' %}
+            {% include "snipplets/home/home-popup-temp.tpl" %}
+        {% endif %}
+
         {# Footer #}
 
         {% snipplet "footer/footer.tpl" %}

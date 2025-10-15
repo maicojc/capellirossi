@@ -1500,6 +1500,33 @@ Página de inicio
 	subtitle
 		subtitle = <span class='legend'>El texto y link del botón no se van a mostrar si está habilitada la suscripción al newsletter</span>
 	collapse
+		title = Popup com temporizador
+		backto = home_order_position
+	checkbox
+		name = popup_temp
+		description = Ativar popup 
+	i18n_input
+		name = popup_temp_emoji
+		description = Emoji
+	i18n_input
+		name = popup_temp_title
+		description = Titulo
+	i18n_input
+		name = popup_temp_text
+		description = Texto da popup
+	i18n_input
+		name = popup_temp_cta
+		description = CTA do botão
+	i18n_input
+		name = popup_temp_link
+		description = Link do botão
+	i18n_input
+		name = popup_temp_data
+		description = Data final da popup. Formato: 06/04/25
+	i18n_input
+		name = popup_temp_hora
+		description = Hora final da popup. Formato: 18:00
+	collapse
 		title = Página de inicio
 		backto = _top
 	section_order
@@ -1529,6 +1556,9 @@ Página de inicio
 	link
 		text = Pop-up promocional
 		linkto = home_promotional_popup
+	link
+		text = Popup Com Timer
+		linkto = popup_temp
 Listado de productos
 	meta
 		icon = th-large
