@@ -14,15 +14,9 @@
 
 {% set category_image_url = 'banner-products.jpg' | static_url %}
 
-<section class="category-banner position-relative {% if not category.description %}mb-md-3{% endif %}" data-store="category-banner">
-    <img class="category-banner-image lazyautosizes lazyload fade-in w-100" src="{{ category_images['small'] }}" data-srcset="{{ category_images['large'] }} 480w, {{ category_images['huge'] }} 640w, {{ category_images['original'] }} 1024w, {{ category_images['1080p'] }} 1920w" data-sizes="auto" alt="{{ 'Banner de la categoría' | translate }} {{ category.name }}" />
-    <div class="textbanner-text category-banner-info over-image">
-        <div class="h-100 d-flex justify-content-center align-items-center">
-            <div class="container text-center px-0 p-md-3">
-                {% embed "snipplets/page-header.tpl" with {container: false, padding: false} %}
-                    {% block page_header_text %}{{ category.name }}{% endblock page_header_text %}
-                {% endembed %}
-            </div>
-        </div>
-    </div>
+<section class="category-banner position-relative mb-3" data-store="category-banner">
+    <img class="category-banner-image d-none d-md-block lazyautosizes lazyload fade-in w-100" src="{{ category_images['small'] }}" data-srcset="{{ category_images['large'] }} 480w, {{ category_images['huge'] }} 640w, {{ category_images['original'] }} 1024w, {{ category_images['1080p'] }} 1920w" data-sizes="auto" alt="{{ 'Banner de la categoría' | translate }} {{ category.name }}" />
+    {% if category.id == '34976775' %}
+        <img class="category-banner-image d-block d-md-none lazyautosizes lazyload fade-in w-100" src="https://d1a9qnv764bsoo.cloudfront.net/stores/006/038/253/rte/Capelli Rossi - Google Display Ads_ - black friday.png" data-sizes="auto" alt="{{ 'Banner de la categoría' | translate }} {{ category.name }}" />
+    {% endif %}
 </section>
