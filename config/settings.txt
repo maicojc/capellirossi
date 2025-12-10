@@ -1181,6 +1181,8 @@ Página de inicio
 			2 = 2 banners por fila
 			3 = 3 banners por fila
 			4 = 4 banners por fila
+			5 = 5 banners por fila
+			6 = 6 banners por fila
 	gallery
 		name = banner_promotional
 		gallery_image = Agregar imagen

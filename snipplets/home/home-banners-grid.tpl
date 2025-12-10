@@ -36,6 +36,8 @@
     {% set section_slider_desktop_only = settings.banner_promotional_format_desktop == 'slider' and settings.banner_promotional_format_mobile == 'grid' %}
     {% set section_slider_desktop = settings.banner_promotional_format_desktop == 'slider' %}
     {% set section_id = mobile ? 'banners-promotional-mobile' : 'banners-promotional' %}
+    {% set section_columns_desktop_6 = settings.banner_promotional_columns_desktop == 6 %}
+    {% set section_columns_desktop_5 = settings.banner_promotional_columns_desktop == 5 %}
     {% set section_columns_desktop_4 = settings.banner_promotional_columns_desktop == 4 %}
     {% set section_columns_desktop_3 = settings.banner_promotional_columns_desktop == 3 %}
     {% set section_columns_desktop_2 = settings.banner_promotional_columns_desktop == 2 %}
@@ -103,7 +105,7 @@
             {% set has_banner_text = slide.title or slide.description or slide.button %}
 
             {% if not module or (module and (section_slider or theme_editor)) %}
-                <div class="js-banner {% if section_slider %}swiper-slide {% endif %}col-grid {% if section_columns_desktop_4 %}col-md-3{% elseif section_columns_desktop_3 %}col-md-4{% elseif section_columns_desktop_2 %}col-md-6{% elseif section_columns_desktop_1 %}col-md-12{% endif %}">
+                <div class="js-banner {% if section_slider %}swiper-slide {% endif %}col-grid {% if section_columns_desktop_6 %}col-md-2{% elseif section_columns_desktop_5 %}col-md-2-4{% elseif section_columns_desktop_4 %}col-md-3{% elseif section_columns_desktop_3 %}col-md-4{% elseif section_columns_desktop_2 %}col-md-6{% elseif section_columns_desktop_1 %}col-md-12{% endif %}">
             {% endif %}
                 <div class="js-textbanner textbanner {{ banner_classes }}">
                     {% if slide.link %}

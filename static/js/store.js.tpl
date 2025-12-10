@@ -1593,7 +1593,7 @@ DOMContentLoaded.addEventOrExecute(() => {
             {% set banner_promotional_only_desktop_slider = settings.banner_promotional_format_desktop == 'slider' and settings.banner_promotional_format_mobile != 'slider' %}
             {% set banner_promotional_columns_desktop = settings.banner_promotional_columns_desktop %}
 
-            var bannersPromotionalPerViewDesktopVal = {% if banner_promotional_columns_desktop == 4 %}4{% elseif banner_promotional_columns_desktop == 3 %}3{% elseif banner_promotional_columns_desktop == 2 %}2{% else %}1{% endif %};
+            var bannersPromotionalPerViewDesktopVal = {% if banner_promotional_columns_desktop == 6 %}6{% elseif banner_promotional_columns_desktop == 5 %}5{% elseif banner_promotional_columns_desktop == 4 %}4{% elseif banner_promotional_columns_desktop == 3 %}3{% elseif banner_promotional_columns_desktop == 2 %}2{% else %}1{% endif %};
             var bannersPromotionalSpaceBetween = {% if settings.banner_promotional_without_margins %}0{% else %}itemSwiperSpaceBetween{% endif %};
 
                 {% if banner_promotional_only_mobile_slider %}
@@ -1622,7 +1622,7 @@ DOMContentLoaded.addEventOrExecute(() => {
                                     hideSwiperControls(".js-swiper-banners-promotional-prev", ".js-swiper-banners-promotional-next");
                                 },
                             },
-                            slidesPerView: 1.15,
+                            slidesPerView: 2,
                         {% if banner_promotional_desktop_slider %}
                             breakpoints: {
                                 768: {
@@ -1656,7 +1656,7 @@ DOMContentLoaded.addEventOrExecute(() => {
                                     hideSwiperControls(".js-swiper-banners-promotional-mobile-prev", ".js-swiper-banners-promotional-mobile-next");
                                 },
                             },
-                            slidesPerView: 1.15,
+                            slidesPerView: 2,
                         {% if banner_promotional_desktop_slider %}
                             breakpoints: {
                                 768: {
