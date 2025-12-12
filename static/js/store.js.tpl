@@ -1765,6 +1765,76 @@ DOMContentLoaded.addEventOrExecute(() => {
             {% endif %}
         {% endif %}
 
+        {# Home video gallery slider #}
+
+        {% set video_gallery_mobile_items = 0 %}
+{% set video_gallery_sources = [
+            {
+                'image_name': 'home_video_gallery_image_1.jpg',
+                'video_id': settings.home_video_gallery_vimeo_id_1,
+                'photo_link': settings.home_video_gallery_photo_link_1,
+                'video_link': settings.home_video_gallery_video_link_1
+            },
+            {
+                'image_name': 'home_video_gallery_image_2.jpg',
+                'video_id': settings.home_video_gallery_vimeo_id_2,
+                'photo_link': settings.home_video_gallery_photo_link_2,
+                'video_link': settings.home_video_gallery_video_link_2
+            },
+        ] %}
+
+        {% for gallery_source in video_gallery_sources %}
+            {% if gallery_source.image_name | has_custom_image and gallery_source.video_id %}
+                {% set video_gallery_mobile_items = video_gallery_mobile_items + 2 %}
+            {% endif %}
+        {% endfor %}
+
+        {% if video_gallery_mobile_items %}
+            createSwiper('.js-swiper-home-video-gallery', {
+                lazy: true,
+                watchOverflow: true,
+                threshold: 5,
+                spaceBetween: itemSwiperSpaceBetween,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                centerInsufficientSlides: true,
+            });
+
+            var initVideoGalleryMobileVideos = function() {
+                var videoGalleryMobileIframes = document.querySelectorAll('.js-home-video-gallery-iframe-mobile');
+
+                if (!videoGalleryMobileIframes.length) {
+                    return;
+                }
+
+                videoGalleryMobileIframes.forEach(function(iframeElement) {
+                    if (iframeElement.dataset.mobileLoaded === "true") {
+                        return;
+                    }
+
+                    var mobileSrc = iframeElement.getAttribute('data-mobile-src');
+
+                    if (mobileSrc) {
+                        iframeElement.setAttribute('src', mobileSrc);
+                        iframeElement.dataset.mobileLoaded = "true";
+                    }
+                });
+            };
+
+            if (window.innerWidth < 768) {
+                initVideoGalleryMobileVideos();
+            } else {
+                var handleVideoGalleryResize = function() {
+                    if (window.innerWidth < 768) {
+                        initVideoGalleryMobileVideos();
+                        window.removeEventListener('resize', handleVideoGalleryResize);
+                    }
+                };
+
+                window.addEventListener('resize', handleVideoGalleryResize);
+            }
+        {% endif %}
+
         {# Image and text modules #}
 
         {% if (settings.module_slider or theme_editor and (settings.module and settings.module is not empty)) or theme_editor %}

@@ -128,6 +128,11 @@
 		{% include 'snipplets/home/home-video.tpl' %}
 	{% endif %}
 
+{% elseif section_select == 'video_gallery' %}
+
+	{#  **** Video gallery ****  #}
+	{% include 'snipplets/home/home-video-galery.tpl' %}
+
 {% elseif section_select == 'newsletter' %}
 
 	{#  **** Newsletter ****  #}

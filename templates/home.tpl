@@ -43,7 +43,7 @@
     {#  **** Hidden Sections ****  #}
     {% if show_component_help %}
         <div style="display:none">
-            {% for section_select in ['slider', 'main_categories', 'welcome', 'institutional', 'products', 'informatives', 'categories', 'main_product', 'new', 'video', 'sale', 'promotion', 'best_seller', 'instafeed', 'newsletter' , 'promotional', 'news_banners', 'brands' , 'testimonials', 'modules'] %}
+            {% for section_select in ['slider', 'main_categories', 'welcome', 'institutional', 'products', 'informatives', 'categories', 'main_product', 'new', 'video', 'video_gallery', 'sale', 'promotion', 'best_seller', 'instafeed', 'newsletter' , 'promotional', 'news_banners', 'brands' , 'testimonials', 'modules'] %}
                 {% if section_select not in newArray %}
                     {% include 'snipplets/home/home-section-switch.tpl' %}
                 {% endif %}

@@ -2815,6 +2815,41 @@ input[type=number] {
   height: 100%;
 }
 
+/* // Home video gallery */
+
+.section-video-gallery {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.home-video-gallery-grid .home-video-gallery-media,
+.home-video-gallery-slider .home-video-gallery-media {
+  display: block;
+  position: relative;
+  padding-top: 125%;
+  overflow: hidden;
+  border-radius: var(--border-radius-half);
+  background-color: var(--main-foreground-opacity-05);
+}
+
+.home-video-gallery-media img,
+.home-video-gallery-media iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-video-gallery-slider .swiper-slide {
+  height: auto;
+}
+
+.home-video-gallery-slider .home-video-gallery-media {
+  height: 100%;
+}
+
 /* // Main categories */
 
 .section-categories-home {

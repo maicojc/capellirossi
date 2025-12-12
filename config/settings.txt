@@ -1364,6 +1364,45 @@ Página de inicio
 	checkbox
 		name = video_vertical_mobile
 		description = Usar formato vertical en celulares
+
+	collapse
+		title = Galeria de vídeos
+		backto = home_order_position
+	description
+		description = Combine imagens quadradas com vídeos curtos do Vimeo.
+	subtitle
+		subtitle = Bloco 1
+	image
+		original = home_video_gallery_image_1.jpg
+		title = Enviar imagem quadrada (1080x1080)
+		width = 1080
+		height = 1080
+	i18n_input
+		name = home_video_gallery_photo_link_1
+		description = Link da foto (opcional)
+	i18n_input
+		name = home_video_gallery_vimeo_id_1
+		description = ID do vídeo no Vimeo (somente números)
+	i18n_input
+		name = home_video_gallery_video_link_1
+		description = Link do vídeo (opcional)
+	subtitle
+		subtitle = Bloco 2
+	image
+		original = home_video_gallery_image_2.jpg
+		title = Enviar imagem quadrada (1080x1080)
+		width = 1080
+		height = 1080
+	i18n_input
+		name = home_video_gallery_photo_link_2
+		description = Link da foto (opcional)
+	i18n_input
+		name = home_video_gallery_vimeo_id_2
+		description = ID do vídeo no Vimeo (somente números)
+	i18n_input
+		name = home_video_gallery_video_link_2
+		description = Link do vídeo (opcional)
+
 	collapse
 		title = Testimonios
 		backto = home_order_position
@@ -1550,6 +1589,7 @@ Página de inicio
 			news_banners = Banners de novedades
 			brands = Marcas
 			video = Video
+			video_gallery = Galeria de vídeos
 			main_product = Producto principal
 			newsletter = Newsletter
 			instafeed = Publicaciones de Instagram
