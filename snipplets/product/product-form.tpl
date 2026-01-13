@@ -167,11 +167,6 @@
                 {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: "btn-big"} %}
 
             </div>
-            <section class="section-info-delivery">
-                <div class="div-info-delivery" style="background-color: #ff9e9eff; border-radius: 5px;">
-                    Este produto possui um prazo adicional de até 37 dias para entrega, devido ao período de férias.
-                </div>
-            </section>
 
             {% if settings.ajax_cart %}
                 <div class="col-12">
