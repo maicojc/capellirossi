@@ -2691,9 +2691,6 @@ input[type=number] {
   padding-top: 0;
 }
 
-.section-home:not(.section-home-color) + .section-home:not(.section-home-color) {
-  margin-top: var(--section-negative-distance);
-}
 
 .section-title {
   position: relative;
