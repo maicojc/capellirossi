@@ -1,15 +1,21 @@
-{% embed "snipplets/page-header.tpl" %}
-	{% block page_header_text %}{{ page.name }}{% endblock page_header_text %}
-{% endembed %}
+{# page selector #}
 
-{# Institutional page  #}
+{% if page.name in ['ingles', 'espanhol'] %}
+	{% include 'snipplets/' ~ page.name ~ '/index.tpl' %}
+{% else %}
+	{% embed "snipplets/page-header.tpl" %}
+		{% block page_header_text %}{{ page.name }}{% endblock page_header_text %}
+	{% endembed %}
 
-<section class="user-content pb-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				{{ page.content }}
+	{# Institutional page  #}
+
+	<section class="user-content pb-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					{{ page.content }}
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+{% endif %}

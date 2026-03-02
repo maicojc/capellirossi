@@ -1894,6 +1894,53 @@ Pie de página
 	textarea
 		name = custom_seal_code
 
+Institucional
+	meta
+		icon = th-large
+		advanced = false
+	collapse
+		title = Página en inglés
+	title
+		title = Galería de imágenes
+	description
+		description = Estas imágenes se mostrarán en la parte superior de la página institucional en inglés.
+	gallery
+		name = institutionalEnglishGallery
+		gallery_image = Agregar imagen
+		gallery_link = [Opcional] Página web a la que quieres que te lleve la imagen al hacer click
+		gallery_width = 1600
+		gallery_height = 900
+	title
+		title = Imagen destacada
+	description
+		description = Imagen de apoyo para el bloque "About Us".
+	image
+		original = institutional_english_about.jpg
+		title = Cargar imagen (JPG, GIF, PNG)
+		width = 960
+		height = 1200
+	collapse
+		title = Página en español
+	title
+		title = Galería de imágenes
+	description
+		description = Espacio reservado para la futura versión institucional en español.
+	gallery
+		name = institutional_spanish_gallery
+		gallery_image = Agregar imagen
+		gallery_link = [Opcional] Página web a la que quieres que te lleve la imagen al hacer click
+		gallery_width = 1600
+		gallery_height = 900
+	title
+		title = Imagen destacada
+	description
+		description = Imagen de apoyo para el contenido interno de la página en español.
+	image
+		original = institutional_spanish_about.jpg
+		title = Cargar imagen (JPG, GIF, PNG)
+		width = 960
+		height = 1200
+
 Edición avanzada de CSS
 	meta
 		icon = code

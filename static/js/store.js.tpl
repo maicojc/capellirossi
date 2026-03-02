@@ -1963,6 +1963,47 @@ DOMContentLoaded.addEventOrExecute(() => {
 
 	{% endif %}
 
+    {% if template == 'page' %}
+        {# /* // English page gallery slider */ #}
+
+        if (jQueryNuvem('.js-swiper-english-gallery').length > 0) {
+            createSwiper('.js-swiper-english-gallery', {
+                watchOverflow: true,
+                threshold: 5,
+                watchSlideProgress: true,
+                watchSlidesVisibility: true,
+                slideVisibleClass: 'js-swiper-slide-visible',
+                spaceBetween: itemSwiperSpaceBetween,
+                navigation: {
+                    nextEl: '.js-swiper-english-gallery-next',
+                    prevEl: '.js-swiper-english-gallery-prev',
+                },
+                pagination: {
+                    el: '.js-swiper-english-gallery-pagination',
+                    clickable: true,
+                },
+                slidesPerView: 1.15,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 3.2,
+                    }
+                },
+                on: {
+                    afterInit: function () {
+                        hideSwiperControls(".js-swiper-english-gallery-prev", ".js-swiper-english-gallery-next");
+                    },
+                },
+                pagination: {
+                    el: '.js-swiper-home-pagination',
+                    clickable: paginationClickableValue,
+                },
+            },
+            function(swiperInstance) {
+                window.englishGallerySwiper = swiperInstance;
+            });
+        }
+    {% endif %}
+
     {% if template == 'product' %}
 
         {# /* // Product Related */ #}

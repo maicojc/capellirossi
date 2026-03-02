@@ -149,7 +149,7 @@
                         <a href="https://institucional.capellirossi.com.br/spanish" target="_blank" rel="noopener">
                         <img src="https://www.flagcdn.com/32x24/es.png" width="32" height="24" alt="Spain"> Espanhol
                         </a>
-                        <a href="https://institucional.capellirossi.com.br/" target="_blank" rel="noopener">
+                        <a href="https://www.capellirossi.com.br/ingles/" target="_blank" rel="noopener">
                         <img src="https://www.flagcdn.com/32x24/gb.png" width="32" height="24" alt="United Kingdom"> Inglês
                         </a>
                     </div>
