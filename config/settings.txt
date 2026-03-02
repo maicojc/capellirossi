@@ -1926,7 +1926,7 @@ Institucional
 	description
 		description = Espacio reservado para la futura versión institucional en español.
 	gallery
-		name = institutional_spanish_gallery
+		name = institutionalSpanishGallery
 		gallery_image = Agregar imagen
 		gallery_link = [Opcional] Página web a la que quieres que te lleve la imagen al hacer click
 		gallery_width = 1600
