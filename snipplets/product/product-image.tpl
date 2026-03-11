@@ -6,7 +6,7 @@
 
 <div class="row" data-store="product-image-{{ product.id }}"> 
 	{% if has_multiple_slides %}
-		<div class="{% if home_main_product %}d-none d-md-block{% else %} order-last order-md-0{% endif %} col-md-auto pr-md-0 mt-3 mt-md-0">
+		<div class="d-none d-md-block col-md-auto pr-md-0 mt-3 mt-md-0">
 			<div class="product-thumbs-container position-relative">
 				<div class="text-center d-none d-md-block">
 					<div class="js-swiper-product-thumbs-prev swiper-button-prev swiper-product-thumb-control  svg-icon-text">
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			{% snipplet 'placeholders/product-detail-image-placeholder.tpl' %}
-			{% if has_multiple_slides and home_main_product %}
+			{% if has_multiple_slides %}
 				<div class="js-swiper-product-pagination swiper-pagination position-relative pt-3 pb-1 d-md-none"></div>
 			{% endif %}
 		</div>
