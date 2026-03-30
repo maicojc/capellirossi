@@ -819,7 +819,7 @@ DOMContentLoaded.addEventOrExecute(() => {
                 },210);
             }else{
                 setTimeout(function(){
-                    var head_height = jQueryNuvem("{% if template == 'home' %}.js-topbar{% else %}.js-head-main{% endif %}").outerHeight();
+                    var head_height = jQueryNuvem(".js-head-main").outerHeight();
                     jQueryNuvem(selector).css("paddingTop", head_height.toString() - 1 + 'px');
                 },210);
             }
